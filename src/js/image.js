@@ -2,7 +2,7 @@ require.config({
     paths: {
         jquery: 'jquery.min',
         handlebars: 'handlebars-v2.0.0',
-        imagesloaded: 'imagesLoaded',
+        imagesloaded: 'imagesloaded',
         main: 'main'
     }
 });
