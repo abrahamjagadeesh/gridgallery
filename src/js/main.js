@@ -13,7 +13,8 @@ define(["jquery", "handlebars"], function($, Handlebars) {
             var defaults = {
                     count: 4,
                     minHeight: 300,
-                    maxHeight: 500
+                    maxHeight: 500,
+                    scrollToBox: true
                 },
                 source = $("#grid-template").html();
             this.template = Handlebars.compile(source);
@@ -203,7 +204,9 @@ define(["jquery", "handlebars"], function($, Handlebars) {
                                     //     cursorcolor: '#c2c2c2'
                                     // });
                                 }
-                                base.adjustScroll(self.offset().top, 300);
+                                var scrollPosition;
+                                scrollPosition = base.settings.scrollToBox ? boxContainer.offset().top : self.offset().top;
+                                base.adjustScroll(scrollPosition, 300);
                             });
                         };
                         // open or close box container
