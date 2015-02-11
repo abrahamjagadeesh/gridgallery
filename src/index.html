@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <!-- <link href="http://php01.dev.local:9090/frontend_dev/jet/css/site.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet"> -->
+    <link href="css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <script id="grid-template" type="text/x-handlebars-template">
+        <div class="og-expander">
+            <div class="og-expander-inner">
+                <span class="og-close"></span>
+                <div class="og-fullimg-wrap">
+                    <div class="og-fullimg-left"><i class="fa fa-2x fa-angle-left"></i>
+                    </div>
+                    <div class="og-fullimg og-loader">
+                        {{#each images}}
+                        <div class="og-largeImg" style="background-image:url({{large}})"></div>
+                        {{/each}}
+                    </div>
+                    <div class="og-fullimg-right"><i class="fa fa-2x fa-angle-right"></i>
+                    </div>
+                </div>
+                <div class="og-details">
+                    <div class="og-wrapTitle">
+                        <h3 class="secondary">{{title}}</h3> {{#if photo_credit.length}}
+                        <h3 class="credits">Photo Credit: {{photo_credit}}</h3> {{/if}} {{#if description.length}}
+                        <p>{{description}}</p>
+                        {{/if}}
+                        <p class="news-social">
+                            <span class="share-text">Share </span>
+                            <a class="social-lnk" href="" title="Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('{{url}}'),'facebook-share-dialog','width=626,height=436');return false;">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a class="social-lnk" href="" title="Twitter" onclick="window.open('http://twitter.com/share?url=' + encodeURIComponent('{{url}}'), 'Twitter-share-dialog', 'width=626,height=436');return false;">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="efader">
+                        <ul class="og-grid-small">
+                            {{#each images}}
+                            <li class="od-grid-list">
+                                <a href="javascript:;;">
+                                    <img class="related_photo" src="{{thumb}}">
+                                </a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="card-template" type="text/x-handlebars-template">
+        {{#each this}}
+        <li class="card">
+            <figure class="card-figure">
+                <img src="{{showcase}}" />
+                <figcaption><span>{{title}}</span>
+                </figcaption>
+                <div class="og-pointer"></div>
+            </figure>
+        </li>
+        {{/each}}
+    </script>
+
+    <div class="page-gallery-wrap">
+        <h2 class="title">Grid Galery</h2>
+        <div class="page-gallery">
+            <ul class="og-grid">
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/newresponse.js"></script>
+    <script data-main="js/image" src="js/require.js"></script>
+
+</body>
+
+</html>
