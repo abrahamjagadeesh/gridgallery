@@ -7,4 +7,4 @@ require.config({
     }
 });
 //load youtube video on home page
-require(["jquery", "handlebars", "imagesLoaded", "main"]);
+require(["jquery", "handlebars", "imagesloaded", "main"]);
